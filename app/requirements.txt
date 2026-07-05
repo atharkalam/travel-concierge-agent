@@ -1,0 +1,12 @@
+# =============================================================================
+# requirements.txt — Travel Concierge agent dependencies
+# =============================================================================
+# This file lives inside the agent directory (app/) so that
+# `adk deploy agent_engine` picks it up instead of auto-generating one
+# with only google-adk[a2a].
+#
+# The [mcp] extra is required for McpToolset (Maps Grounding Lite).
+# =============================================================================
+google-adk[a2a,mcp]==2.3.0
+google-cloud-aiplatform>=1.70.0
+python-dotenv>=1.0.0

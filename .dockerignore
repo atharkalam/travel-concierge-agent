@@ -1,0 +1,44 @@
+# =============================================================================
+# .dockerignore — Travel Concierge
+# =============================================================================
+# Keep the Docker build context small and avoid leaking secrets/dev artifacts.
+
+# Virtual environment (large, not needed in container)
+.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Environment files (secrets — pass via env vars at runtime)
+.env
+.env.*
+!.env.example
+
+# Git
+.git/
+.gitignore
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ADK local session data
+app/.adk/
+
+# Dev tooling
+.ruff_cache/
+.pre-commit-config.yaml
+tests/
+docs/
+
+# Build artifacts
+.deploy_staging/
+dist/
+build/
+*.egg-info/
+
+# Lock file (not needed — we use requirements.txt in Docker)
+uv.lock
