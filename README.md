@@ -1,7 +1,6 @@
 # Travel Concierge: Multi-Agent AI Travel Planner
 
 [![Google ADK](https://img.shields.io/badge/Powered_by-Google_ADK-blue?style=flat-square)](https://cloud.google.com/vertex-ai)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 Travel Concierge is a comprehensive, multi-agent AI application designed to eliminate the stress of vacation planning. Built using the **Google Agent Development Kit (ADK)** and powered by **Vertex AI** Gemini models, it orchestrates specialized AI agents to provide personalized destination recommendations, interactive itineraries, and budget tracking—all enhanced by live data via the **Google Maps Grounding Lite MCP**.
 
@@ -30,14 +29,14 @@ graph TD
     classDef agent fill:#cce5ff,stroke:#007bff,stroke-width:2px;
     classDef mcp fill:#fff3cd,stroke:#ffc107,stroke-width:2px;
 
-    User([User]):::user --> |"I want to plan a trip..."| RootAgent[Root Orchestrator Agent<br/>(app)]:::orchestrator
+    User(["User"]):::user -->|"I want to plan a trip..."| RootAgent["Root Orchestrator Agent (app)"]:::orchestrator
     
-    RootAgent --> |Delegates Destination Queries| DestAgent[Destination Agent]:::agent
-    RootAgent --> |Delegates Itinerary Planning| ItinAgent[Itinerary Agent]:::agent
-    RootAgent --> |Delegates Cost/Budget Tasks| BudgetAgent[Budget Agent]:::agent
+    RootAgent -->|"Delegates Destination Queries"| DestAgent["Destination Agent"]:::agent
+    RootAgent -->|"Delegates Itinerary Planning"| ItinAgent["Itinerary Agent"]:::agent
+    RootAgent -->|"Delegates Cost/Budget Tasks"| BudgetAgent["Budget Agent"]:::agent
     
-    DestAgent <--> |Place Search, Nearby Attractions| MapsMCP[(Google Maps Grounding Lite MCP)]:::mcp
-    ItinAgent <--> |Route Planning, Weather| MapsMCP
+    DestAgent <-->|"Place Search, Nearby Attractions"| MapsMCP[("Google Maps Grounding Lite MCP")]:::mcp
+    ItinAgent <-->|"Route Planning, Weather"| MapsMCP
 ```
 
 ### Key Components
